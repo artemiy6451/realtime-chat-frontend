@@ -60,5 +60,6 @@ export default {
     padding: 14px 0px;
     margin: 30px;
     font-size: 20px;
+    max-width: 213px;
 }
 </style>

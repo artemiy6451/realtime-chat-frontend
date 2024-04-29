@@ -1,19 +1,16 @@
 <template>
-    <div>
-        <div 
-            v-for="user in users" 
+    <div class="userList__container">
+        <list-item
+            v-for="user in users"
             :key="user.id"
-            class="user-item"
         >
-            <list-item>
-                <p class="userName">
-                    {{ user.firstName }} {{ user.lastName }}
-                </p>
-                <custom-button class="addUserBtn">
-                    +
-                </custom-button>
-            </list-item>
-        </div>
+            <p class="userName">
+                {{ user.firstName }} {{ user.lastName }}
+            </p>
+            <custom-button class="addUserBtn">
+                +
+            </custom-button>
+        </list-item>
     </div>
 </template>
 
@@ -23,7 +20,7 @@ import CustomButton from './ui/CustomButton.vue';
 
 
 export default {
-    name:"UserList",
+    name: "UserList",
     components: {
         ListItem,
         CustomButton
@@ -38,6 +35,13 @@ export default {
 </script>
 
 <style scoped>
+.userList__container {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    align-self: end;
+}
 .userName {
     padding-right: 10px;
     font-size: 20px;
@@ -45,6 +49,7 @@ export default {
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
+
 .addUserBtn {
     padding: 0;
     margin: 0;
