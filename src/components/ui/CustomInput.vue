@@ -27,6 +27,7 @@ export default {
 
 <style scoped>
 .input {
+    display: block;
     text-align: center;
     border: 1.5px solid black;
     border-radius: 5px;

@@ -1,5 +1,5 @@
 <template>
-    <header-component :user-name="userName" />
+    <header-component :user="user" />
     <main class="main">
         <div class="chat-window" />
         <sidebar-component :users="users" />
@@ -17,7 +17,11 @@ export default {
     },
     data() {
         return {
-            userName: "Alex",
+            user:{
+                loggedIn: false,
+                firstName: "Kazantsev",
+                lastName: "Artem"
+            },
             users: [
                 {id: 1, firstName: "Kazantsev", lastName: "Artem"},
                 {id: 2, firstName: "John", lastName: "Doe"},

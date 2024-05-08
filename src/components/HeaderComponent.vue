@@ -1,11 +1,23 @@
 <template>
     <header class="header">
-        <!-- TODO: Bind this button to registraton page -->
         <custom-button 
+            v-if="user.loggedIn"
             class="userNameBtn"
         > 
-            {{ userName }} 
+            {{ user.firstName }}
         </custom-button>
+        <custom-button 
+            v-else
+            class="userNameBtn"
+        > 
+            <router-link 
+                to="/registration"
+                class="loginLink"
+            >
+                Register
+            </router-link>
+        </custom-button>
+
         <custom-input 
             :placeholder-text="placeholderText"
             class="userSearch"
@@ -25,10 +37,9 @@ export default {
         CustomInput
     },
     props: {
-        userName: {
-            type: String,
-            required: true,
-            default: "Login"
+        user: {
+            type: Object,
+            required: true
         }
     },
     data() {
@@ -61,5 +72,11 @@ export default {
     margin: 30px;
     font-size: 20px;
     max-width: 213px;
+}
+
+.loginLink {
+    font-size: 30px;
+    text-decoration: none;
+    color: #000;
 }
 </style>

@@ -17,7 +17,7 @@ import UserList from './UserList.vue';
 export default {
     name:"SidebarComponent",
     components: {
-    UserList
+        UserList
     },
     props: {
         users: {

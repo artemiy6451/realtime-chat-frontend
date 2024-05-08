@@ -1,15 +1,13 @@
 <template>
-    <chat-page />
+    <div class="app">
+        <router-view />
+    </div>
 </template>
 
 <script>
 import "@/reset.css";
-import ChatPage from "@/views/ChatPage.vue";
 
 export default {
-    components: {
-        ChatPage
-    }
 }
 </script>
 
